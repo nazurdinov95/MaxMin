@@ -5,7 +5,7 @@ function miniMaxSum(arr) {
     let minSum = 0;
     let maxSum = 0;
 
-    for (let i=0; i < arr.length; i ++) {
+    for (let i=0; i < arr.length-1; i ++) {
          
          minSum += arr[i]
     }
@@ -13,8 +13,8 @@ function miniMaxSum(arr) {
          
         maxSum += arr[i]
    }
-   document.getElementById("printMin").innerHTML ="Min"+ minSum + "<br/>"
-   document.getElementById("printMax").innerHTML ="Max"+ maxSum
+  console.log(minSum)
+  console.log(maxSum)
 }
 
 
