@@ -4,14 +4,13 @@ function miniMaxSum(arr) {
     let sum = 0
     let max = 0
 
-    let len = arr.length, min = Infinity;
-  while (len--) {
-    if (Number(arr[len]) < min) {
-      min = Number(arr[len]);
-    }
-}
-    
+    let min = Infinity;
+
     for (let i=0; i < arr.length; i ++) {
+        if (arr[i] < min) {
+            min = arr[i];
+          }
+
         if(arr[i] > max) {
             max = arr[i]
         }
