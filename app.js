@@ -4,7 +4,7 @@ function miniMaxSum(arr) {
     let sum = 0
     let max = 0
 
-    var len = arr.length, min = Infinity;
+    let len = arr.length, min = Infinity;
   while (len--) {
     if (Number(arr[len]) < min) {
       min = Number(arr[len]);
