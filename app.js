@@ -1,21 +1,18 @@
-const arr = [1, 2, 3, 4, 5]
-
+const arr = [1, 2,5, 3, 4,]
+const maxEl = Math.max.apply(null, arr);
+const minEl = Math.min.apply(null, arr);
 
 function miniMaxSum(arr) {
     let minSum = 0;
     let maxSum = 0;
-
-    for (let i=0; i < arr.length-1; i ++) {
+    
+    for (let i=0; i < arr.length; i ++) {
          
          minSum += arr[i]
+         maxSum += arr[i]
     }
-    for (let i=1; i < arr.length; i ++) {
-         
-        maxSum += arr[i]
-   }
-  console.log(minSum)
-  console.log(maxSum)
+  console.log(maxSum - maxEl)
+  console.log(minSum - minEl)
 }
-
 
 miniMaxSum(arr)
