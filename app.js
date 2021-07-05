@@ -10,6 +10,6 @@ function clickCounter(e){
     }
     if (e.target.className == 'secondBtn'){
         count--;
-        secondBtn.innerHTML = "SUBMIT : "+ count
+        secondBtn.innerHTML = "SUBMIT : "+ count;
     }
 }
