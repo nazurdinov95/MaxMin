@@ -1,22 +1,16 @@
-const arr = [1, 2, 5, 3, 4]
+firstBtn = document.getElementById('button_plus');
+secondBtn = document.getElementById('button_minus');
 
-function miniMaxSum(arr) {
-    let sum = 0
-    let max = 0
+let count = 0; 
 
-    let min = Infinity;
-
-    for (let i=0; i < arr.length; i ++) {
-        if (arr[i] < min) {
-            min = arr[i];
-          }
-
-        if(arr[i] > max) {
-            max = arr[i]
-        }
-        sum += arr[i]
+document.onclick = function (e) {
+    if (e.target.className == 'firstBtn') {
+        count++;
+        
+        firstBtn.innerHTML = "SUBMIT : " + count;
     }
-  console.log(sum - min)
-  console.log(sum - max)
+    if (e.target.className == 'secondBtn'){
+        count--
+        secondBtn.innerHTML = "SUBMIT : " + count
+    }
 }
-miniMaxSum(arr)
