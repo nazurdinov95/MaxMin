@@ -1,15 +1,14 @@
-let firstBtn = document.getElementById('button_plus');
-let secondBtn = document.getElementById('button_minus');
-let count = 0; 
+let buttonPlus = document.getElementById('button_plus');
+let buttonMinus = document.getElementById('button_minus');
+let countPlus = 0;
+let CountMinus = 0; 
 
-function clickCounter(e){
-    if (e.target.className == 'firstBtn') {
-        count++;
-        
-        firstBtn.innerHTML = "SUBMIT : " + count;
-    }
-    if (e.target.className == 'secondBtn'){
-        count--;
-        secondBtn.innerHTML = "SUBMIT : "+ count;
-    }
-}
+buttonPlus.addEventListener('click', ()=>{
+    countPlus++;
+    buttonPlus.innerHTML = "SUBMIT : " + countPlus;
+})
+
+buttonMinus.addEventListener('click', ()=>{
+    CountMinus--;
+    buttonMinus.innerHTML = "SUBMIT : " + CountMinus;
+})
