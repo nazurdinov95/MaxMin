@@ -1,28 +1,29 @@
-* {
-    box-sizing: border-box;
-}
 body {
-    display: block;
-    background-color: rgb(4, 22, 70);
+    display: flex;
+    margin: 0;
 }
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #334867;
     width: 100vw;
     height: 100vh;
+    margin: 0;
 }
 .plusBtn {
-    width: 100px;
-    height: 40px;
+    width: 250px;
+    height: 75px;
+    font-weight: 20px;
     color:#fff;
-    background-color: rgb(0, 14, 54);
+    background-color: #334867;
     margin-right: 1rem;
 }
 
 .minusBtn {
-    width: 100px;
-    height: 40px;
+    width: 250px;
+    height: 75px;
+    font-weight: 20px;
     text-align: center;
     background-color: #fff;
 }
