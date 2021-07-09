@@ -1,14 +1,23 @@
-const buttonPlus = document.getElementById('button_plus');
-const buttonMinus = document.getElementById('button_minus');
-let countPlus = 0;
-let countMinus = 0; 
+function checkBrackets(str) {
+    let closers = {'[': ']','(': ')','{': '}'};
+    
+    let parStack = str.match(/\(|\{|\[|\)|\}|\]/g) || [];
+  
+    if (parStack.length % 2 !== 0) {
+      return false;
+    } else {
+      while (parStack.length) {
+        
+        if (closers[parStack.shift()] !== parStack.pop()) {
+         
+          return false
+        }
+      }
+      return true;
+    }
+  }
 
-buttonPlus.addEventListener('click', ()=>{
-    countPlus++;
-    buttonPlus.innerHTML = "SUBMIT : " + countPlus;
-})
-
-buttonMinus.addEventListener('click', ()=>{
-    countMinus--;
-    buttonMinus.innerHTML = "SUBMIT : " + countMinus;
-})
+  console.log('no braces ', checkBrackets("(())(){[}"));
+  console.log('matched ', checkBrackets("({[]})"));
+  console.log('mis matched ',checkBrackets("[(]) abcd"));
+  console.log('matched ',checkBrackets("[{()}] test"));
