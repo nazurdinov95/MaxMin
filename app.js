@@ -1,23 +1,41 @@
-function checkBrackets(str) {
-    let closers = {'[': ']','(': ')','{': '}'};
-    
-    let parStack = str.match(/\(|\{|\[|\)|\}|\]/g) || [];
-  
-    if (parStack.length % 2 !== 0) {
-      return false;
-    } else {
-      while (parStack.length) {
-        
-        if (closers[parStack.shift()] !== parStack.pop()) {
-         
-          return false
-        }
+function brackets(expression){
+  let leftArr=[];
+  let rightArr = [];
+  for(let i=0; i<expression.length; i++){
+      if(expression[i] === '(' || expression[i] === '[' || expression[i] === "{"){
+        leftArr.push(expression[i]);
       }
-      return true;
-    }
+      
+      
+      if(expression[i] === ')'){
+    
+          rightArr.push("(");
+      }else if(expression[i] === '}'){
+      
+          rightArr.push("{");
+      } else if(expression[i] === ']'){
+      
+          rightArr.push("[");
+      }
+ }
+  
+ rightArr.reverse();
+  
+  if(leftArr.length<rightArr.length || leftArr.length>rightArr.length){
+  return false;
+  }
+  
+  for(let k=0; k<leftArr.length; k++) {
+      if(leftArr[k] != rightArr[k]){
+          return false;
+      }
   }
 
-  console.log('no braces ', checkBrackets("(())(){[}"));
-  console.log('matched ', checkBrackets("({[]})"));
-  console.log('mis matched ',checkBrackets("[(]) abcd"));
-  console.log('matched ',checkBrackets("[{()}] test"));
+  return true;
+}
+
+
+
+console.log(brackets('(())()')); // true
+console.log(brackets('{[()]}')); // true
+console.log(brackets('{[()]}(')); // true
